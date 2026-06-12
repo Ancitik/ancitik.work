@@ -3,5 +3,8 @@
   "compatibility_date": "2026-06-12",
   "assets": {
     "directory": "./dist"
-  }
+  },
+  "routes": [
+    { "pattern": "ancitik.work", "custom_domain": true }
+  ]
 }
