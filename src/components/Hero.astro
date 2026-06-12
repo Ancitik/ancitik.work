@@ -1,0 +1,42 @@
+---
+import { profile } from '../data/profile';
+---
+
+<header class="hero">
+  <div class="hero__dark grid-bg">
+    <p class="micro-label">ancitik.work</p>
+    <h1 class="hero__name">Alexandre<br />Laurans</h1>
+    <p class="hero__title">{profile.title}</p>
+  </div>
+  <div class="hero__light">
+    <p class="hero__tagline">{profile.tagline}</p>
+    <nav class="hero__actions" aria-label="Primary">
+      <a class="btn btn--solid-dark" href={`mailto:${profile.email}`}>Get in touch</a>
+      <a class="btn btn--outline-dark" href={profile.linkedin} rel="me noopener">LinkedIn ↗</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 72vh; }
+  .hero__dark {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 64px; gap: 16px;
+  }
+  .hero__name {
+    font-size: clamp(2.6rem, 6vw, 4.5rem);
+    font-weight: 700; letter-spacing: -0.03em; line-height: 1.04;
+  }
+  .hero__title { color: var(--ink-muted); letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.85rem; font-family: var(--font-display); }
+  .hero__light {
+    background: var(--surface); color: var(--on-surface);
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 64px; gap: 32px;
+  }
+  .hero__tagline { font-size: 1.15rem; line-height: 1.8; color: var(--on-surface-muted); max-width: 38ch; }
+  .hero__actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  @media (max-width: 760px) {
+    .hero { grid-template-columns: 1fr; min-height: unset; }
+    .hero__dark, .hero__light { padding: 48px 24px; }
+  }
+</style>

@@ -1,0 +1,23 @@
+---
+import { impact } from '../data/profile';
+---
+
+<section class="impact grid-bg" aria-label="Career highlights">
+  <div class="container impact__row">
+    {impact.map((i) => (
+      <div class="impact__item">
+        <span class="impact__value display">{i.value}</span>
+        <span class="impact__label">{i.label}</span>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .impact { border-top: 1px solid var(--border-dark); border-bottom: 1px solid var(--border-dark); padding: 40px 0; }
+  .impact__row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .impact__item { display: flex; flex-direction: column; gap: 4px; }
+  .impact__value { font-size: 2.2rem; font-weight: 700; letter-spacing: -0.02em; }
+  .impact__label { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-faint); }
+  @media (max-width: 760px) { .impact__row { grid-template-columns: repeat(2, 1fr); } }
+</style>
