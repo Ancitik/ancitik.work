@@ -24,8 +24,12 @@ export const impact = [
     statement: '10 years in production across AWS, Azure and GCP.',
   },
   {
-    label: 'Communication & DevX',
-    statement: 'Platforms as products — developer self-service, enablement and cross-team coaching.',
+    label: 'Developer Experience',
+    statement: 'Platforms as products — developer self-service from commit to production.',
+  },
+  {
+    label: 'Security',
+    statement: 'Security by design — network segmentation, supply-chain scanning, secrets management.',
   },
 ];
 
