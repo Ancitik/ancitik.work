@@ -3,33 +3,40 @@ import { jobs, earlier } from '../data/profile';
 ---
 
 <section id="experience" class="xp container">
-  <p class="micro-label">01 — Experience</p>
-  <ol class="xp__list">
-    {jobs.map((job) => (
-      <li class={`xp__card ${job.highlight ? 'xp__card--highlight' : ''}`}>
-        <div class="xp__head">
-          <h2 class="xp__company">{job.company}</h2>
-          <p class="xp__meta">{job.role} · {job.period}</p>
-        </div>
-        <ul class="xp__points">
-          {job.points.map((p) => <li>{p}</li>)}
-        </ul>
-      </li>
-    ))}
-  </ol>
-  <p class="xp__earlier">{earlier}</p>
+  <div class="section-grid">
+    <div>
+      <span class="ghost-numeral" aria-hidden="true">01</span>
+      <p class="micro-label">Experience</p>
+    </div>
+    <div>
+      <ol class="xp__list">
+        {jobs.map((job) => (
+          <li class="xp__row">
+            <div class="xp__head">
+              <h2 class={`xp__company ${job.highlight ? 'xp__company--highlight' : ''}`}>{job.company}</h2>
+              <p class="xp__meta">{job.role} · {job.period}</p>
+            </div>
+            <ul class="xp__points">
+              {job.points.map((p) => <li>{p}</li>)}
+            </ul>
+          </li>
+        ))}
+      </ol>
+      <p class="xp__earlier">{earlier}</p>
+    </div>
+  </div>
 </section>
 
 <style>
-  .xp { padding: 96px 24px; display: flex; flex-direction: column; gap: 28px; }
-  .xp__list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
-  .xp__card { border: 1px solid var(--border-dark); padding: 28px 32px; color: var(--ink); }
-  .xp__card--highlight { background: var(--surface); color: var(--on-surface); border-color: var(--surface); }
+  .xp { padding-top: 96px; padding-bottom: 96px; }
+  .xp__list { list-style: none; }
+  .xp__row { border-bottom: 1px solid var(--hairline); padding: 28px 0; }
+  .xp__row:first-child { padding-top: 0; }
   .xp__head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 12px; }
-  .xp__company { font-size: 1.3rem; font-weight: 700; letter-spacing: -0.01em; }
-  .xp__meta { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.6; font-family: var(--font-display); }
-  .xp__points { list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 0.95rem; }
-  .xp__card .xp__points li { opacity: 0.85; }
-  .xp__points li::before { content: '— '; opacity: 0.45; }
-  .xp__earlier { font-size: 0.8rem; color: var(--ink-faint); }
+  .xp__company { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.02em; color: var(--ink-muted); }
+  .xp__company--highlight { color: var(--ink); }
+  .xp__meta { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); }
+  .xp__points { list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 0.95rem; color: var(--ink-muted); }
+  .xp__points li::before { content: '— '; color: var(--ink-faint); }
+  .xp__earlier { font-size: 0.8rem; color: var(--ink-faint); margin-top: 24px; }
 </style>

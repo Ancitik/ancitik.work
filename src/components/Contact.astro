@@ -3,21 +3,27 @@ import { profile } from '../data/profile';
 ---
 
 <footer id="contact" class="contact">
-  <div class="container contact__inner">
-    <h2 class="contact__heading">Let's talk platforms.</h2>
-    <div class="contact__actions">
-      <a class="btn btn--solid-light" href={`mailto:${profile.email}`}>Email me</a>
-      <a class="btn btn--outline-light" href={profile.linkedin} rel="me noopener">LinkedIn ↗</a>
-      <a class="btn btn--outline-light" href={profile.github} rel="me noopener">GitHub ↗</a>
+  <div class="container section-grid">
+    <div>
+      <span class="ghost-numeral" aria-hidden="true">03</span>
+      <p class="micro-label">Contact</p>
     </div>
-    <p class="contact__location">{profile.location}</p>
+    <div class="contact__body">
+      <h2 class="contact__heading">Let's talk platforms.</h2>
+      <div class="contact__actions">
+        <a class="btn btn--solid-light" href={`mailto:${profile.email}`}>Email me</a>
+        <a class="btn btn--outline-light" href={profile.linkedin} rel="me noopener">LinkedIn ↗</a>
+        <a class="btn btn--outline-light" href={profile.github} rel="me noopener">GitHub ↗</a>
+      </div>
+      <p class="contact__location">{profile.location}</p>
+    </div>
   </div>
 </footer>
 
 <style>
-  .contact { border-top: 1px solid var(--border-dark); padding: 96px 0; }
-  .contact__inner { display: flex; flex-direction: column; align-items: center; gap: 28px; text-align: center; }
-  .contact__heading { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; letter-spacing: -0.02em; }
-  .contact__actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+  .contact { border-top: 1px solid var(--hairline); padding: 96px 0; }
+  .contact__body { display: flex; flex-direction: column; gap: 28px; align-items: flex-start; }
+  .contact__heading { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; letter-spacing: -0.03em; }
+  .contact__actions { display: flex; gap: 12px; flex-wrap: wrap; }
   .contact__location { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-faint); }
 </style>

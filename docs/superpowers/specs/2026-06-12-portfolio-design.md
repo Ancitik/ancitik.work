@@ -11,14 +11,20 @@
 - Deploy: Cloudflare Workers static assets, custom domain `ancitik.work`, deployed with `wrangler`
 - Repo: `ancitik/ancitik.work` on GitHub
 
-## Visual design — "Dark canvas"
+## Visual design — "Swiss Grid" (v2, supersedes "Dark canvas")
 
-- Strict black & white palette. Base `#0a0a0a`, text `#f5f5f5`/`#fafafa`, muted `#888`–`#aaa`
-- Thin background grid on dark surfaces: 1px lines `#1b1b1b`, ~28px cells (CSS `linear-gradient` background)
-- Hero is split: left black with grid (name, title), right white (positioning statement, CTAs)
-- Body continuous black + grid. White used as accent: recent-experience cards, primary CTA buttons
-- Typography: self-hosted **Space Grotesk** (variable, woff2) for headings/display, system sans stack for body; uppercase micro-labels with wide letter-spacing
-- Responsive: hero split stacks vertically on mobile; grid texture stays
+- Strict black & white palette. Base `#0a0a0a`, text `#f5f5f5`/`#fafafa`, muted `#9a9a9a`, faint `#8a8a8a`
+- Thin background grid on dark surfaces: 1px lines `#1b1b1b`, ~28px cells, continuous across body
+- Asymmetric modular grids per section (e.g. `2fr 1fr`, `1fr 2fr`) — Swiss Modernism 2.0 (ui-ux-pro-max style DB)
+- Hero: name large on dark grid (left), white floating tagline block (right, offset) containing CTAs
+- Ghost section numerals (`01`, `02`, `03`) — oversized, `#2e2e2e`, decorative (`aria-hidden`)
+- Experience: table-style rows with 1px hairline dividers, not cards; white reserved for hero block + primary CTAs
+- Typography: self-hosted **Archivo** (variable) for headings/display, **Space Grotesk** (variable) for body/labels; uppercase micro-labels with wide letter-spacing
+- Zero border-radius, no shadows; depth via hairlines and inversion only
+- Responsive: asymmetric grids stack to single column on mobile; grid texture stays
+
+### v1 history
+v1 "Dark canvas" (split hero, white experience cards) shipped through quality gates 2026-06-12, replaced same day by Swiss Grid after ui-ux-pro-max review.
 
 ## Page structure (single page, anchor nav)
 
