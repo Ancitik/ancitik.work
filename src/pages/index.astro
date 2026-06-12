@@ -2,11 +2,17 @@
 import Base from '../layouts/Base.astro';
 import Hero from '../components/Hero.astro';
 import ImpactBand from '../components/ImpactBand.astro';
+import Experience from '../components/Experience.astro';
+import Stack from '../components/Stack.astro';
+import Contact from '../components/Contact.astro';
 ---
 
 <Base>
   <Hero />
-  <main>
+  <main class="grid-bg">
     <ImpactBand />
+    <Experience />
+    <Stack />
   </main>
+  <Contact />
 </Base>
