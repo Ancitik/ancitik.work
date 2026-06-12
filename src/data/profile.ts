@@ -29,7 +29,7 @@ export const impact = [
   },
   {
     label: 'Security',
-    statement: 'Security by design — network segmentation, supply-chain scanning, secrets management.',
+    statement: 'Security by design — workload identity, zero trust at scale, supply-chain scanning, secrets management.',
   },
 ];
 
@@ -96,5 +96,7 @@ export const stacks: { group: string; items: string[] }[] = [
   { group: 'IaC', items: ['Terraform', 'Pulumi', 'Ansible'] },
   { group: 'GitOps & CI/CD', items: ['ArgoCD', 'Flux', 'GitLab CI', 'GitHub Actions', 'Tekton'] },
   { group: 'Observability', items: ['Prometheus', 'Grafana', 'Datadog', 'OpenTelemetry'] },
+  { group: 'Security & Identity', items: ['SPIFFE', 'Istio', 'Trivy', 'SOPS'] },
+  { group: 'Messaging', items: ['Kafka', 'NATS'] },
   { group: 'AI platforms', items: ['Agentic workflows', 'LLM infrastructure', 'MCP'] },
 ];
