@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { profile } from '../data/profile';
 ---
 
 <Base title="OG" noindex>
@@ -7,7 +8,7 @@ import Base from '../layouts/Base.astro';
     <div>
       <p class="micro-label" style="margin-bottom: 16px;">ancitik.work</p>
       <h1 class="og__name">Alexandre Laurans</h1>
-      <p class="og__title">Senior Platform Engineer · SRE</p>
+      <p class="og__title">{profile.title}</p>
     </div>
     <p class="og__foot">Kubernetes · AWS · Azure · IaC · GitOps</p>
   </div>
