@@ -11,10 +11,22 @@ export const profile = {
 };
 
 export const impact = [
-  { value: '10+', label: 'years in production' },
-  { value: '47', label: 'K8s clusters operated' },
-  { value: '22', label: 'cloud regions' },
-  { value: '3', label: 'clouds — AWS · Azure · GCP' },
+  {
+    label: 'Scale',
+    statement: 'Operated 47 Kubernetes clusters across 22 cloud regions.',
+  },
+  {
+    label: 'Ownership',
+    statement: 'Owned SRE roadmaps with CTOs; led teams of senior engineers.',
+  },
+  {
+    label: 'Breadth',
+    statement: '10 years in production across AWS, Azure and GCP.',
+  },
+  {
+    label: 'Communication & DevX',
+    statement: 'Platforms as products — developer self-service, enablement and cross-team coaching.',
+  },
 ];
 
 export type Job = {

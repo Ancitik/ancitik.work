@@ -3,21 +3,30 @@ import { impact } from '../data/profile';
 ---
 
 <section class="impact" aria-label="Career highlights">
-  <div class="container impact__row">
+  <div class="container">
     {impact.map((i) => (
-      <div class="impact__item">
-        <span class="impact__value display">{i.value}</span>
-        <span class="impact__label">{i.label}</span>
+      <div class="impact__row">
+        <h2 class="impact__label">{i.label}</h2>
+        <p class="impact__statement">{i.statement}</p>
       </div>
     ))}
   </div>
 </section>
 
 <style>
-  .impact { border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); padding: 40px 0; }
-  .impact__row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-  .impact__item { display: flex; flex-direction: column; gap: 4px; }
-  .impact__value { font-size: 2.4rem; font-weight: 800; letter-spacing: -0.03em; }
-  .impact__label { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-faint); }
-  @media (max-width: 760px) { .impact__row { grid-template-columns: repeat(2, 1fr); } }
+  .impact { border-top: 1px solid var(--hairline); padding: 48px 0 24px; }
+  .impact__row {
+    display: grid; grid-template-columns: 1fr 2fr; gap: 16px;
+    border-bottom: 1px solid var(--hairline); padding: 18px 0;
+    align-items: baseline;
+  }
+  .impact__row:first-child { padding-top: 0; }
+  .impact__label {
+    font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--ink-faint); font-weight: 500; font-family: var(--font-body);
+  }
+  .impact__statement { font-size: 1.05rem; color: var(--ink); }
+  @media (max-width: 760px) {
+    .impact__row { grid-template-columns: 1fr; gap: 4px; }
+  }
 </style>
