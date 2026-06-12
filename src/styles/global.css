@@ -1,0 +1,73 @@
+@import '@fontsource-variable/space-grotesk';
+
+:root {
+  --bg: #0a0a0a;
+  --bg-grid-line: #1b1b1b;
+  --grid-size: 28px;
+  --surface: #fafafa;
+  --ink: #f5f5f5;
+  --ink-muted: #9a9a9a;
+  --ink-faint: #6b6b6b;
+  --on-surface: #111111;
+  --on-surface-muted: #555555;
+  --border-dark: #2a2a2a;
+  --font-display: 'Space Grotesk Variable', system-ui, sans-serif;
+  --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* thin grid texture for dark surfaces */
+.grid-bg {
+  background-image:
+    linear-gradient(var(--bg-grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--bg-grid-line) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+}
+
+h1, h2, h3, .display { font-family: var(--font-display); }
+
+.micro-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-family: var(--font-display);
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid currentColor;
+  transition: opacity 0.15s ease;
+}
+.btn:hover { opacity: 0.75; }
+.btn--solid-dark { background: var(--on-surface); color: var(--surface); border-color: var(--on-surface); }
+.btn--solid-light { background: var(--surface); color: var(--on-surface); border-color: var(--surface); }
+.btn--outline-dark { color: var(--on-surface); }
+.btn--outline-light { color: var(--ink); border-color: var(--ink-faint); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
