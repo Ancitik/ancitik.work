@@ -1,9 +1,9 @@
 export const profile = {
   name: 'Alexandre Laurans',
-  title: 'Senior Platform Engineer · SRE',
+  title: 'Senior Platform Engineer · SRE Tech Lead',
   tagline:
-    'I build internal platforms developers actually want to use. 10 years shipping cloud infrastructure — Kubernetes, AWS, Azure — currently at Kiln.',
-  location: 'Pau, France · Remote',
+    'I build internal platforms developers actually want to use. 10 years shipping cloud & on-prem infrastructure — Kubernetes, AWS, Azure — currently at Kiln.',
+  location: 'South West, France · Remote',
   email: 'alexandre.laurans14@gmail.com',
   linkedin: 'https://www.linkedin.com/in/alexandre-laurans/',
   github: 'https://github.com/ancitik',
@@ -13,7 +13,7 @@ export const profile = {
 export const impact = [
   {
     label: 'Scale',
-    statement: 'Operated 47 Kubernetes clusters across 22 cloud regions.',
+    statement: 'Operated 47 Kubernetes clusters across 22 cloud and on-prem regions.',
   },
   {
     label: 'Ownership',
@@ -21,7 +21,7 @@ export const impact = [
   },
   {
     label: 'Breadth',
-    statement: '10 years in production across AWS, Azure and GCP.',
+    statement: '10 years in production across AWS, Azure, GCP, Scaleway, and on-prem.',
   },
   {
     label: 'Developer Experience',
@@ -29,7 +29,7 @@ export const impact = [
   },
   {
     label: 'Security',
-    statement: 'Security by design — workload identity, zero trust at scale, supply-chain scanning, secrets management.',
+    statement: 'Security by design — workload identity, zero trust at scale, supply-chain hardening, secrets management.',
   },
 ];
 
@@ -81,7 +81,7 @@ export const jobs: Job[] = [
     highlight: false,
     points: [
       'Actia Automotive — software forge modernization, Azure landing zones, Kubernetes execution platform.',
-      'Berger-Levrault — monolith→microservices replatforming: Istio, Tekton, ArgoCD, security-by-design; developer platform on Swarm & K8s.',
+      'Berger-Levrault — monolith→microservices replatforming: Istio, Tekton, ArgoCD, security-by-design; developer platform on K8s.',
       'Twelv — sovereign-cloud SaaS architecture on Scaleway Kubernetes.',
     ],
   },
@@ -91,12 +91,13 @@ export const earlier =
   'Earlier: DevOps Engineer @ SKALE-5 (2021–22) · DevOps Architect @ RGPD Web (2019) · DevOps Architect & IT Manager @ Genesis Groupe (2018–19)';
 
 export const stacks: { group: string; items: string[] }[] = [
-  { group: 'Orchestration', items: ['Kubernetes', 'Docker', 'Helm', 'Kustomize'] },
+  { group: 'Orchestration', items: ['Kubernetes', 'Crossplane', 'Helm', 'Kustomize'] },
   { group: 'Clouds', items: ['AWS', 'Azure', 'GCP', 'Scaleway'] },
-  { group: 'IaC', items: ['Terraform', 'Pulumi', 'Ansible'] },
+  { group: 'IaC', items: ['Terraform', 'Pulumi', 'Crossplane', 'Ansible', 'Packer'] },
   { group: 'GitOps & CI/CD', items: ['ArgoCD', 'Flux', 'GitLab CI', 'GitHub Actions', 'Tekton'] },
   { group: 'Observability', items: ['Prometheus', 'Grafana', 'Datadog', 'OpenTelemetry'] },
-  { group: 'Security & Identity', items: ['SPIFFE', 'Istio', 'Trivy', 'SOPS'] },
+  { group: 'Networking', items: ['Cilium', 'Istio', 'Gateway API', 'Hub&Spoke', 'Network Policy'] },
+  { group: 'Security & Identity', items: ['SPIFFE', 'SOPS', 'Vault', 'Wiz', 'IdP', 'ZeroTrust'] },
   { group: 'Messaging', items: ['Kafka', 'NATS'] },
   { group: 'AI platforms', items: ['Agentic workflows', 'LLM infrastructure', 'MCP'] },
 ];
