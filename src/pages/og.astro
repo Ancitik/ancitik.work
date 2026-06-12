@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="OG" noindex>
+  <div class="og grid-bg">
+    <div>
+      <p class="micro-label" style="margin-bottom: 16px;">ancitik.work</p>
+      <h1 class="og__name">Alexandre Laurans</h1>
+      <p class="og__title">Senior Platform Engineer · SRE</p>
+    </div>
+    <p class="og__foot">Kubernetes · AWS · Azure · IaC · GitOps</p>
+  </div>
+</Base>
+
+<style>
+  .og {
+    width: 1200px; height: 630px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 80px;
+  }
+  .og__name { font-size: 5rem; font-weight: 700; letter-spacing: -0.03em; }
+  .og__title { color: var(--ink-muted); letter-spacing: 0.12em; text-transform: uppercase; font-size: 1.3rem; font-family: var(--font-display); margin-top: 12px; }
+  .og__foot { color: var(--ink-faint); font-size: 1.1rem; font-family: var(--font-display); }
+</style>
