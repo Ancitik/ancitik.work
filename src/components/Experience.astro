@@ -19,6 +19,7 @@ import { jobs, earlier } from '../data/profile';
             <ul class="xp__points">
               {job.points.map((p) => <li>{p}</li>)}
             </ul>
+            {job.link && <a class="xp__link" href={job.link.href}>{job.link.label}</a>}
           </li>
         ))}
       </ol>
@@ -38,5 +39,7 @@ import { jobs, earlier } from '../data/profile';
   .xp__meta { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); }
   .xp__points { list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 0.95rem; color: var(--ink-muted); }
   .xp__points li::before { content: '— '; color: var(--ink-faint); }
+  .xp__link { display: inline-block; margin-top: 12px; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); text-decoration: none; border-bottom: 1px solid var(--hairline); padding-bottom: 2px; transition: color 0.15s ease; }
+  .xp__link:hover { color: var(--ink); }
   .xp__earlier { font-size: 0.8rem; color: var(--ink-faint); margin-top: 24px; }
 </style>

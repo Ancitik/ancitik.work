@@ -1,0 +1,87 @@
+---
+import { selectedWork } from '../data/profile';
+const { eyebrow, title, problem, approach, built, stats, outcome, stack } = selectedWork;
+---
+
+<section id="work" class="work container">
+  <div class="section-grid">
+    <div>
+      <span class="ghost-numeral" aria-hidden="true">02</span>
+      <p class="micro-label">Selected Work</p>
+    </div>
+    <div class="work__body">
+      <p class="work__eyebrow">{eyebrow}</p>
+      <h2 class="work__title">{title}</h2>
+
+      <div class="work__prose">
+        <div class="work__note">
+          <p class="work__note-label">The problem</p>
+          <p>{problem}</p>
+        </div>
+        <div class="work__note">
+          <p class="work__note-label">The approach</p>
+          <p>{approach}</p>
+        </div>
+      </div>
+
+      <p class="work__note-label work__built-label">What I led — across the stack</p>
+      <div class="work__built">
+        {built.map((b) => (
+          <div class="work__built-row">
+            <h3 class="work__built-name">{b.label}</h3>
+            <p class="work__built-text">{b.body}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="work__stats">
+        {stats.map((s) => (
+          <div class="work__stat">
+            <p class="work__stat-value">{s.value}</p>
+            <p class="work__stat-label">{s.label}</p>
+          </div>
+        ))}
+      </div>
+      <p class="work__outcome">{outcome}</p>
+
+      <p class="work__stack"><span>Stack</span> {stack}</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .work { padding-top: 96px; padding-bottom: 96px; }
+  .work__body { display: flex; flex-direction: column; }
+  .work__eyebrow { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); }
+  .work__title { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -0.03em; margin-top: 12px; line-height: 1.05; }
+
+  .work__prose { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px; }
+  .work__note p { font-size: 0.95rem; color: var(--ink-muted); line-height: 1.7; }
+  .work__note-label { font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 10px; }
+
+  .work__built-label { margin-top: 48px; }
+  .work__built { display: flex; flex-direction: column; margin-top: 8px; }
+  .work__built-row {
+    display: grid; grid-template-columns: 1fr 2fr; gap: 16px;
+    border-bottom: 1px solid var(--hairline); padding: 18px 0; align-items: baseline;
+  }
+  .work__built-name { font-size: 0.95rem; font-weight: 700; letter-spacing: -0.01em; color: var(--ink); font-family: var(--font-display); }
+  .work__built-text { font-size: 0.95rem; color: var(--ink-muted); line-height: 1.6; }
+
+  .work__stats {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    margin-top: 48px; padding-top: 8px;
+  }
+  .work__stat-value { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; letter-spacing: -0.03em; color: var(--ink); line-height: 1.1; }
+  .work__stat-label { font-size: 0.75rem; letter-spacing: 0.04em; color: var(--ink-faint); margin-top: 8px; }
+  .work__outcome { font-size: 0.9rem; color: var(--ink-muted); font-style: italic; margin-top: 20px; max-width: 60ch; }
+
+  .work__stack { font-size: 0.85rem; color: var(--ink-muted); margin-top: 40px; line-height: 1.7; }
+  .work__stack span { display: block; font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 6px; }
+
+  @media (max-width: 760px) {
+    .work__prose { grid-template-columns: 1fr; gap: 28px; }
+    .work__built-row { grid-template-columns: 1fr; gap: 4px; }
+    .work__stats { grid-template-columns: 1fr; gap: 20px; }
+  }
+</style>

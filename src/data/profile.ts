@@ -21,7 +21,7 @@ export const impact = [
   },
   {
     label: 'Breadth',
-    statement: '10 years in production across AWS, Azure, GCP, Scaleway, and on-prem.',
+    statement: '10 years in production across AWS, Azure, GCP, Scaleway, and on-prem — ~50% on-prem at Kiln today.',
   },
   {
     label: 'Developer Experience',
@@ -31,6 +31,10 @@ export const impact = [
     label: 'Security',
     statement: 'Security by design — workload identity, zero trust at scale, supply-chain hardening, secrets management.',
   },
+  {
+    label: 'AI Platforms',
+    statement: 'Shipping AI-assisted tooling and agentic workflows for platform teams at Kiln; drove AI/agentic adoption across engineering at Hublo.',
+  },
 ];
 
 export type Job = {
@@ -39,6 +43,7 @@ export type Job = {
   period: string;
   highlight: boolean; // white card vs outlined card
   points: string[];
+  link?: { label: string; href: string };
 };
 
 export const jobs: Job[] = [
@@ -59,9 +64,10 @@ export const jobs: Job[] = [
     highlight: true,
     points: [
       'Owned the SRE roadmap with the CTO; led a team of 3 senior engineers.',
-      'Completed the ECS→EKS migration, then rebuilt the AWS network foundation (VPC & IP addressing design) to unblock multi-region growth.',
+      'Led the ECS→EKS migration and directed the AWS network foundation rebuild (VPC & IP-addressing design) to unblock multi-region growth.',
       'Drove adoption of AI tooling and agentic platforms across engineering.',
     ],
+    link: { label: 'See Selected Work ↓', href: '#work' },
   },
   {
     company: 'SOPHiA GENETICS',
@@ -69,7 +75,7 @@ export const jobs: Job[] = [
     period: '2022 — 2024',
     highlight: false,
     points: [
-      'Operated 47 Kubernetes clusters across 22 Azure regions for a global genomics SaaS.',
+      'Operated 47 Kubernetes clusters across 22 regions (Azure + on-prem) for a global genomics SaaS.',
       'Migrated 15 TB of on-prem data to Azure with Data Factory.',
       'Coordinated distributed engineering teams across Europe.',
     ],
@@ -101,3 +107,35 @@ export const stacks: { group: string; items: string[] }[] = [
   { group: 'Messaging', items: ['Kafka', 'NATS'] },
   { group: 'AI platforms', items: ['Agentic workflows', 'LLM infrastructure', 'MCP'] },
 ];
+
+export const selectedWork = {
+  eyebrow: 'Hublo · Self-service Kubernetes platform · 2024–2026',
+  title: 'From product spec to production in one commit',
+  problem:
+    "Shipping to production meant routing through the platform team. Every new service was a ticket, a wait, and a handful of inconsistent decisions about networking, observability, and security. That doesn't scale — not the infrastructure, and not the people maintaining it.",
+  approach:
+    "Before committing to a line of infrastructure, I interviewed the stakeholders and the platform's real customers — our developers — to build for an actual need, not an infrastructure trend. That product mindset is the difference between a platform people are forced to use and one they reach for.",
+  built: [
+    {
+      label: 'Developer paved path',
+      body: 'Directed the design of a golden path that takes a service from product spec to production in a single commit. Observability, alerting, and security are part of the path, not an afterthought.',
+    },
+    {
+      label: 'Kubernetes platform',
+      body: 'Led a re-architecture of cluster operations around four non-negotiables I refused to trade off against each other: developer autonomy, performance, security, and cost.',
+    },
+    {
+      label: 'AWS network foundation',
+      body: 'Drove the rebuild of the networking layer (VPC and IP-addressing design) for scale — and for safe, secured interoperability with private partners.',
+    },
+  ],
+  stats: [
+    { value: '~3 days → ~45 min', label: 'New service: zero to production' },
+    { value: '4 teams', label: 'Shipping autonomously' },
+    { value: 'Zero', label: 'Platform tickets in the deploy path' },
+  ],
+  outcome:
+    'Observability, alerting, and security ship on the paved path by default — reliability built in, not bolted on.',
+  stack:
+    'Kubernetes · ArgoCD · Terraform · AWS (EKS, VPC, Transit Gateway) · Backstage · Prometheus · Grafana · Datadog · OpenTelemetry · NATS',
+};
