@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '[.tool_input.content, .tool_input.new_string] | map(select(.)) | join(\"\\n\")' | perl -CSD -0777 -ne 'print q[{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"deny\",\"permissionDecisionReason\":\"em dash/en dash blocked; use a hyphen -\"}}] if /[\\x{2014}\\x{2013}]/'",
+            "statusMessage": "Checking for em/en dashes"
+          }
+        ]
+      }
+    ]
+  }
+}
